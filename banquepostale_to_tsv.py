@@ -85,7 +85,7 @@ def data_lines(lines):
                 # francs
                 m = re.match(r'\s*(?P<day>\d{2})\/(?P<month>\d{2})(?P<title>.*?)(?P<value>\d{,3}(?: \d{3})*(,\d+)?)\s+(?P<francs>(?:- |\+ )\d{,3}(?: \d{3})*(?:,\d+)?)\s*$', l)
                 value = float(m.group('value').replace(' ', '').replace(',', '.'))
-                value = -value if m.group('francs')[0] == '-' else value
+                amount = -value if m.group('francs')[0] == '-' else value
             else:
                 m = re.search('^\s*(?P<day>\d{2})/(?P<month>\d{2})\s+(?P<title>.+?)\s+(?P<value>\d{,3}(?: \d{3})*(?:,\d+)?)\s*$', l)
                 amount = float(m.group('value').replace(" ", "").replace(",", "."))
