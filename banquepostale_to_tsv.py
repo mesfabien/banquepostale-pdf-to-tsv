@@ -79,7 +79,7 @@ def data_lines(lines):
             current_record = None
             continue
 
-        if re.search(r'^\s{,2}(?P<date>\d{2}/\d{2})\s', l):
+        if re.search(r'^\s{,3}(?P<date>\d{2}/\d{2})\s', l):
             if publication_date < (2017, 3, 1):
                 # Before 1st march 2017, there is an extra column with the price in
                 # francs
